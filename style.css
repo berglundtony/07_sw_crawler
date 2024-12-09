@@ -1,0 +1,252 @@
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+            color: yellow;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            color: yellow;
+            height: 400px;
+        }
+
+        .hidden {
+            opacity: 0;
+            animation: show 1s forwards;
+            /* Vänta tills logotypen är klar */
+            animation-delay: 5s;
+        } 
+        
+        .star-wars {
+            position: relative;
+            height: 100vh;
+            width: 100vw; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            padding: 0;
+            /* Perspektiv för 3D-effekten*/
+            perspective: 1600px;
+            /* z-index: 2; */
+            /* Sätter en delay på 2 sek */
+            transition: opacity 0.5s ease-in-out 1s;
+            /* Börja osynlig */
+            opacity: 0;
+
+        }
+
+        .star-wars.active {
+            opacity: 1;
+        }
+
+        .crawl{
+            /* Begränsar bredden på texten för bättre läsbarhet */
+            width: 60%;
+           /* Centrera texten i containern */
+            text-align: center;
+            position: absolute;
+            font-size: 6rem;
+            transform: rotateX(65deg);
+            animation: crawl 50s linear forwards;
+            /* animation-delay: 1s; */
+            /* font-size: 6.5rem; */
+            /* line-height: 7; */
+        }
+
+        .image-container {
+        position: absolute;
+        /* Gör att containern kan centreras med top/left */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Flytta till mitten */
+        height: 90vh;
+        /* Anpassa storleken för containern */
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        /* Centrera innehållet horisontellt */
+        justify-content: center;
+        /* Centrera innehållet vertikalt */
+        align-items: center;
+        animation: logotype 20s forwards;
+        }
+
+        img {
+            max-width: 100%;
+            width: 1400px;
+            height: auto;
+            margin-bottom: 6rem;
+        }
+
+        .episode {
+            font-size: 4.5rem;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        h1 {
+            font-size: 10.0rem;
+            margin-bottom: 5px;
+        }
+
+        p {
+            line-height: 8rem;
+            font-size: 6.8rem;
+        }
+
+        .stars-container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            top: calc(var(--random-y) * 1%);
+            left: calc(var(--random-x) * 1%);
+            animation: blink 3s infinite ease-in-out;
+            animation-delay: calc(var(--random-delay) * 1s);
+        }
+    
+        
+@keyframes blink{
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+@keyframes logotype {
+
+    0%{
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0%;
+        height: 0%;
+    }
+}
+
+@keyframes crawl{
+        0%{
+            transform: rotateX(65deg) translateY(100%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: rotateX(65deg) translateY(-200%);
+            opacity: 0;
+        }
+    }
+
+
+    .star:nth-child(1) {
+        --random-x: 28;
+        --random-y: 8;
+        --random-delay: 0;
+    }
+
+    .star:nth-child(2) {
+        --random-x: 35;
+        --random-y: 12;
+        --random-delay: 0.2;
+    }
+
+    .star:nth-child(3) {
+        --random-x: 43;
+        --random-y: 30;
+        --random-delay: 0.5;
+    }
+    
+    .star:nth-child(4) {
+        --random-x: 43;
+        --random-y: 40;
+        --random-delay: 0.6;
+    }
+
+    .star:nth-child(5) {
+        --random-x: 53;
+        --random-y: 60;
+        --random-delay: 0.8;
+    }
+
+    .star:nth-child(6) {
+        --random-x: 68;
+        --random-y: 55;
+        --random-delay: 1;
+    }
+
+    .star:nth-child(7) {
+        --random-x: 80;
+        --random-y: 70;
+        --random-delay: 1.5;
+    }
+
+    .star:nth-child(8) {
+        --random-x: 10;
+        --random-y: 90;
+        --random-delay: 2;
+    }
+
+    .star:nth-child(9) {
+        --random-x: 25;
+        --random-y: 95;
+        --random-delay: 2.5;
+    }
+
+    .star:nth-child(10) {
+        --random-x: 15;
+        --random-y: 75;
+        --random-delay: 0.5;
+    }
+
+    .star:nth-child(11) {
+        --random-x: 25;
+        --random-y: 40;
+        --random-delay: 0.8;
+    }
+
+    .star:nth-child(12) {
+        --random-x: 35;
+        --random-y: 48;
+        --random-delay: 1;
+    }
+
+    .star:nth-child(13) {
+        --random-x: 58;
+        --random-y: 74;
+        --random-delay: 1.5;
+    }
+
+    .star:nth-child(14) {
+        --random-x: 82;
+        --random-y: 26;
+        --random-delay: 2;
+    }
+
+    .star:nth-child(15) {
+        --random-x: 95;
+        --random-y: 15;
+        --random-delay: 2.5;
+    }
+
+    .star:nth-child(16) {
+        --random-x: 78;
+        --random-y: 16;
+        --random-delay: 0.5;
+    }
