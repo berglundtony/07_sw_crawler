@@ -14,12 +14,24 @@
             color: yellow;
             height: 400px;
         }
+        .intro-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fade 5s infinite ease-in-out;
+        }
+
+        .intro{
+            color:rgb(88, 130, 221);
+            font-family: Arial, sans-serif;
+            font-size: 3.0rem;
+        }
 
         .hidden {
             opacity: 0;
             animation: show 1s forwards;
             /* Vänta tills logotypen är klar */
-            animation-delay: 5s;
+            animation-delay:10s;
         } 
         
         .star-wars {
@@ -31,13 +43,11 @@
             align-items: center; 
             padding: 0;
             /* Perspektiv för 3D-effekten*/
-            perspective: 1600px;
-            /* z-index: 2; */
-            /* Sätter en delay på 2 sek */
-            transition: opacity 0.5s ease-in-out 1s;
+            perspective: 1900px;
+            /* Sätter en delay på 5 sek */
+            animation-delay: 1s;
             /* Börja osynlig */
             opacity: 0;
-
         }
 
         .star-wars.active {
@@ -46,35 +56,35 @@
 
         .crawl{
             /* Begränsar bredden på texten för bättre läsbarhet */
-            width: 60%;
+            width: 100%;
            /* Centrera texten i containern */
             text-align: center;
             position: absolute;
-            font-size: 6rem;
+            font-size: 8rem;
             transform: rotateX(65deg);
-            animation: crawl 50s linear forwards;
-            /* animation-delay: 1s; */
-            /* font-size: 6.5rem; */
-            /* line-height: 7; */
+            animation: crawl 75s linear forwards;
+            /* animation-delay: 2s; */
         }
 
         .image-container {
-        position: absolute;
-        /* Gör att containern kan centreras med top/left */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* Flytta till mitten */
-        height: 90vh;
-        /* Anpassa storleken för containern */
-        width: 90vw;
-        display: flex;
-        flex-direction: column;
-        /* Centrera innehållet horisontellt */
-        justify-content: center;
-        /* Centrera innehållet vertikalt */
-        align-items: center;
-        animation: logotype 20s forwards;
+            position: absolute;
+            /* Gör att containern kan centreras med top/left */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Flytta till mitten */
+            height: 90vh;
+            /* Anpassa storleken för containern */
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            /* Centrera innehållet horisontellt */
+            justify-content: center;
+            /* Centrera innehållet vertikalt */
+            align-items: center;
+            animation: logotype 35s forwards;
+            animation-delay: 5s;
+            opacity: 0;
         }
 
         img {
@@ -98,7 +108,7 @@
 
         p {
             line-height: 10rem;
-            font-size: 7.3rem;
+            /* font-size: 7.3rem; */
         }
 
         .stars-container {
@@ -125,6 +135,16 @@
     }
     50%{
         opacity: 1;
+    }
+}
+
+@keyframes fade {
+
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 

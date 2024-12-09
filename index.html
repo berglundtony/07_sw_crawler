@@ -27,12 +27,15 @@
         <div class="star"></div>
     </div>
     
-   
+
     <div class="image-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Star_Wars_Yellow_Logo.svg" alt="sw logo">
    </div>
     <main>
-        <div class="star-wars hidden">
+        <div class="intro-container active">
+            <p class="intro">A long time ago, in a galaxy far, far away...</p>
+        </div>
+            <div class="star-wars hidden">
             <div class="crawl">
             <p class="episode">Episode: V</p>
 
@@ -65,10 +68,17 @@
     </main>
     <script>
         setTimeout(() => {
-              var text =  document.querySelector('.star-wars');
-              text.classList.remove('hidden');
-              text.classList.add('active');
-            }, 1500); // Vänta i 1,5 sekunder
+            var intro = document.querySelector('.intro-container');
+              intro.classList.remove('active');
+              intro.classList.add('hidden');
+            }, 5000); // Vänta i 5 sekunder
+        setTimeout(() => {
+            var text = document.querySelector('.star-wars');
+            text.classList.remove('hidden');
+            text.classList.add('active');
+            intro.classList.remove('active');
+            intro.classList.add('hidden');
+        }, 10000); // Vänta i 10 sekunder
     </script>
 </body>
 </html>
